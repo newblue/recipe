@@ -6,7 +6,7 @@ import (
 	"log"
 	"strings"
 	"io/ioutil"
-	"encoding/line"
+	"bufio"
 	"sort"
 )
 
@@ -34,7 +34,7 @@ func RecipeFromFile(filename string) *Recipe {
 	var ingredients = [...]string{}[:]
 	var directions = [...]string{}[:]
 
-	var input = line.NewReader(f, 1024)
+	var input = bufio.NewReader(f)
 	line, isPrefix, err := input.ReadLine()
 	if err != nil {
 		log.Print("reading description")
