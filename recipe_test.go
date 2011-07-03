@@ -7,7 +7,7 @@ import (
 )
 
 func TestMe(t *testing.T) {
-	if len(Recipe_list)==0 {
+	if len(Recipe_list) == 0 {
 		t.Error(":(")
 	}
 	e := gob.NewEncoder(os.Stdout)
